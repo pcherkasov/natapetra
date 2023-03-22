@@ -44,7 +44,7 @@ public class RootConfig {
     public DataSource dataSource(
             @Value("${url}") String url,
             @Value("${driver}") String driverClassName,
-            @Value("root") String userName,
+            @Value("root") String userName, //а чо тут захардкодила?
             @Value("${password}") String password
     ) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();

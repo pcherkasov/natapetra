@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppUserDTO {
+public class AppUserDTO { //AppUserDto и, как по мне, можно просто UserDto (но это уже сама смотри)
 
     private String userName;
 

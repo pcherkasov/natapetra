@@ -24,7 +24,7 @@ public class AppUserRole implements Serializable {
     }
 
     @Id
-    @Column(name = "role_id")
+    @Column(name = "role_id") //просто id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(
             name = "increment",

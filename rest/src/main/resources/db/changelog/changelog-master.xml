@@ -4,6 +4,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-
+<!--у тебя есть отдельный модуль для базы данных, но миграционные файлы раскиданы по разным. собери их  в каком-нибудь одном-->
     <include file="generated/generated-changeLog.xml"/>
 </databaseChangeLog>

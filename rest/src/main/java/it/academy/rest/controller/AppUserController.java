@@ -20,7 +20,7 @@ public class AppUserController {
     @Autowired
     private AppUserService appUserService;
 
-    @GetMapping("/app_users")
+    @GetMapping("/app_users") //у тебя повторяется урл и его можно вынести в аннотацию общую для всего класса @RequestMapping(value = "/app_users"). И по рест фен-шую нельзя во множественном числе писать, вроде
     List<AppUserDTO> all(
             @RequestParam(name = "page", defaultValue = "0")  Integer page,
             @RequestParam(name = "size", defaultValue = "10") Integer size) {
@@ -29,6 +29,7 @@ public class AppUserController {
 
     @PostMapping("/app_users")
     NewAppUserDTO newUser(@Valid @RequestBody NewAppUserDTO newUser, Errors errors) {
+        //у тебя три строки уровня info и все они к ошибкам относятся. тут надо бы переписать.
         logger.info("Validation Errors: " + errors.hasErrors());
         logger.info("Errors count: " + errors.getErrorCount());
         logger.info("Errors message: " + errors.getAllErrors());

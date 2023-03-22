@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+//подумай, надо ли тебе явно перечислять basePackages?
 @ComponentScan(basePackages = {"it.academy.repository","it.academy.rest.controller", "it.academy.configuration", "it.academy.service"})
 @EntityScan("it.academy.model")
 public class RestApplication {

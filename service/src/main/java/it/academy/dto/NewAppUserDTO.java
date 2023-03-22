@@ -33,6 +33,8 @@ public class NewAppUserDTO implements Serializable {
     @NotEmpty
     private String email;
 
+    //а что ты будешь делать, если у тебя будет 700 ролей? Попробуй подумать над более универсальным решением.
+    //пока это хардкод и, так называемое, решение "в лоб"
     @NotEmpty
     @Pattern(regexp = "\\b(Administrator|Sale User|Customer User|Secure API User)\\b", message = "Error role")
     private String roleName;

@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
-    @Query(value = "SELECT * FROM app_user ORDER BY email", nativeQuery = true)
+    @Query(value = "SELECT * FROM app_user ORDER BY email", nativeQuery = true) //ты ищешь по емейлу, но почему метод никакого параметра не принимает?
     List<AppUser> allUsersOrderByEmail();
 }

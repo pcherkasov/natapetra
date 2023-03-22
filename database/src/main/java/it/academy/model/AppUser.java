@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class AppUser implements Serializable {
 
     @Id
-    @Column(name = "app_user_id")
+    @Column(name = "app_user_id") //можно колонку просто id обозвать
     @GeneratedValue(generator = "increment")
     @GenericGenerator(
             name = "increment",
@@ -40,6 +40,8 @@ public class AppUser implements Serializable {
     @JoinColumn(name = "role_id")
     private AppUserRole appUserRole;
 
+    //это ппц, конечно. Если ты используешь ломбок, то пусть он и генерит тебе все эти методы замени это на ломбок, пожалуй.
+    //но перед соебсом почитай, как он работает и будь готова ответить, каким хером он под капотом занимается. там не очень сложно
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
