@@ -44,6 +44,7 @@ public class AppUserService{
         List<AppUserDTO> appUsers = new ArrayList<>();
         Pageable paging = PageRequest.of(pageNumber, pageSize);
         Page<AppUser> users = appUserRepository.findAll(paging);
+        //лучше вынести в отдельный класс, например UserConverter, тем более, что это в несокльких местах используется
         for (AppUser user: users) {
             AppUserDTO appUserDTO = new AppUserDTO();
             appUserDTO.setUserName(user.getFirstName() + " " + user.getLastName() + " " + user.getSurname());

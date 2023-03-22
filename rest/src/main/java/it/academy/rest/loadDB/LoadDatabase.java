@@ -13,6 +13,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class LoadDatabase {
+    //я бы сделал инициализацию немного иначе, пожалуй.
+    //в ликвибейзе есть возможность выполнять sql скрипты. тоесть создаёшь файлик с запросами, которые наполняют базу,
+    //кладёшь к миграционным скриптам и на этапе разворачивания приложения они накатываются
+    //вот, глянь, как у меня нечно подобное сделано
+    //https://github.com/pcherkasov/sensorsmonitor/tree/development/src/main/resources/migrations
 
     @Autowired
     private AppUserRoleRepository appUserRoleRepository;

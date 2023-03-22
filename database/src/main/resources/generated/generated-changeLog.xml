@@ -23,6 +23,7 @@
             <column name="role_id" type="BIGINT"/>
         </createTable>
     </changeSet>
+<!--    а что за айдишник такой адский? хахх можно просто циферку-->
     <changeSet author="HP (generated)" id="1679514508648-2">
         <createTable tableName="app_user_role">
             <column name="role_id" type="BIGINT">
