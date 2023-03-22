@@ -1,0 +1,58 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/pro
+                   http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="HP (generated)" id="1679514508648-1">
+        <createTable tableName="app_user">
+            <column name="app_user_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints unique="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+            <column name="role_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="HP (generated)" id="1679514508648-2">
+        <createTable tableName="app_user_role">
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="role_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="HP (generated)" id="1679514508648-3">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="generated/data/app_user.csv" quotchar="&quot;" separator="," tableName="app_user">
+            <column header="app_user_id" name="app_user_id" type="NUMERIC"/>
+            <column header="email" name="email" type="STRING"/>
+            <column header="first_name" name="first_name" type="STRING"/>
+            <column header="last_name" name="last_name" type="STRING"/>
+            <column header="surname" name="surname" type="STRING"/>
+            <column header="role_id" name="role_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+    <changeSet author="HP (generated)" id="1679514508648-4">
+        <loadData commentLineStartsWith="#" encoding="UTF-8" file="generated/data/app_user_role.csv" quotchar="&quot;" separator="," tableName="app_user_role">
+            <column header="role_id" name="role_id" type="NUMERIC"/>
+            <column header="role_name" name="role_name" type="STRING"/>
+        </loadData>
+    </changeSet>
+    <changeSet author="HP (generated)" id="1679514508648-5">
+        <createIndex indexName="FKlq2gxssk1oq17qrsyune1m629" tableName="app_user">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="HP (generated)" id="1679514508648-6">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="app_user" constraintName="FKlq2gxssk1oq17qrsyune1m629" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="role_id" referencedTableName="app_user_role" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

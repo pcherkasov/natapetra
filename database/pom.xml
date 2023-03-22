@@ -55,6 +55,12 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.31</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -72,38 +78,6 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>4.9.1</version>
-                <executions>
-                    <execution>
-                        <id>Update DB</id>
-                        <configuration>
-                            <propertyFile>src/main/resources/custom_service.jdbc.properties</propertyFile>
-                            <changeLogFile>src/main/resources/changelog-master.xml</changeLogFile>
-                        </configuration>
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                        <phase>process-resources</phase>
-                    </execution>
-
-                    <!--                    <execution>-->
-                    <!--                        <id>Generate ChangeLog</id>-->
-                    <!--                        <configuration>-->
-                    <!--                            <propertyFile>src/main/resources/car_rent_DB.jdbc.properties</propertyFile>-->
-                    <!--                            <outputChangeLogFile>generatedChangeLog/GeneratedChangeLog.xml</outputChangeLogFile>-->
-                    <!--                            <dataDir>generatedChangeLog/data</dataDir>-->
-                    <!--                        </configuration>-->
-                    <!--                        <goals>-->
-                    <!--                            <goal>generateChangeLog</goal>-->
-                    <!--                        </goals>-->
-                    <!--                        <phase>process-resources</phase>-->
-                    <!--                    </execution>-->
-
-                </executions>
             </plugin>
         </plugins>
     </build>

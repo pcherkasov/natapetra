@@ -1,0 +1,5 @@
+"app_user_id","email","first_name","last_name","surname","role_id"
+"1","ivanov@mail.ru","Ivan","Ivanov","Ivanovich","1"
+"2","petrov@mail.ru","Petr","Petrov","Petrovich","2"
+"3","kim@mail.ru","Kim","Kate","Ivanovna","2"
+"4","ki@mail.ru","Sin","Kate","Ivanovna","2"
